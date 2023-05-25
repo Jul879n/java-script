@@ -14,18 +14,23 @@
         var pecado = document.getElementById("pecado").value;
         var penitencia;
         if(pecado== 1){
+          pecado = "copy/paste sin leer";
           penitencia="Deberás leer un libro completo y hacer un resumen del mismo.";
         } else if(pecado == 2){
+          pecado = "hackear la cuenta del pololo/a";
           penitencia = "Deberás escribir una carta de disculpa a la persona cuya cuenta hackeaste y ofrecerle tu ayuda para mejorar su seguridad en línea.";
         } else if (pecado == 3){
+          pecado = "crackear software propietario";
           penitencia= "Deberás donar al menos $10.000 a una organización benéfica que promueva la educación en programación y software libre.";
         } else if(pecado == 4){
+          pecado = "ataque DOS";
           penitencia= "Deberás pasar un día entero sin acceso a Internet y reflexionar sobre el impacto negativo que pueden tener tus acciones en línea.";
         } else if(pecado ==5){
+          pecado = "Formatear sin respaldar";
           penitencia = "Deberás realizar una copia de seguridad de todos tus archivos importantes y crear un plan de respaldo para evitar futuras pérdidas de datos.";
         }
         var respuesta = "Usted "+nombre+" de "+edad+" años y de la ciudad de "+ciudad+", cometio el pecado de "+pecado+" por lo que su penitencia será: "+penitencia;
-        document.getElementById("respuesta").value = respuesta;
+        document.getElementById("respuesta").innerText = respuesta;
       }
     </script>  
 </head>
