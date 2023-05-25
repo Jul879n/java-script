@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio 10</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-6 mt-3">
+                <h1>Formulario de frase</h1>
+                <form id="penitencia-form">
+                    <form>
+                        <div class="mb-3">
+                            <label for="sujeto">Sujeto:</label>
+                            <input type="text" class="form-control" id="sujeto" placeholder="Ingresa un sujeto">
+                        </div>
+                        <div class="mb-3">
+                            <label for="verbo">Verbo:</label>
+                            <select class="form-select" id="verbo">
+                                <option selected></option>
+                                <option value="se sentía">se sentía</option>
+                                <option value="estaba">estaba</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adjetivo">Adjetivo calificativo:</label>
+                            <input type="text" class="form-control" id="adjetivo"
+                                placeholder="Ingresa un adjetivo calificativo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="sustantivo">Sustantivo:</label>
+                            <input type="text" class="form-control" id="sustantivo" placeholder="Ingresa un sustantivo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="idea">Idea:</label>
+                            <input type="text" class="form-control" id="idea" placeholder="Ingresa una idea">
+                        </div>
+                        <button type="button" class="btn btn-primary" id="generar">Generar oración</button>
+                    </form>
+                    <p class="mt-4" id="oracionGenerada"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        <script>
+            document.getElementById("generar")
+            .addEventListener("click", function() {
+                var sujeto = document.getElementById("sujeto").value;
+                var verbo = document.getElementById("verbo").value;
+                var adjetivo = document.getElementById("adjetivo").value;
+                var sustantivo= document.getElementById("sustantivo").value;
+                var idea= document.getElementById("idea").value;
+                if(sujeto !== "" && verbo !== "" && adjetivo !== "" && sustantivo !== "" && idea !== ""){
+                    var oracionGenerada = sujeto+" "+verbo+" solo, volvía a su departamento, y el silencio era el único que lo esperaba. "+sujeto+" "+verbo+" triste, "+sujeto+" "+verbo+" solo, muy solo. Y "+sujeto+" tuvo una brillante idea: "+idea+".";
+                document.getElementById("oracionGenerada").innerHTML = oracionGenerada;
+                }
+            });
+        </script>
+</body>
+
+</html>
