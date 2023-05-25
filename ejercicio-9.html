@@ -26,8 +26,11 @@
        } else if (pecado == arreglo[4]) {
           penitencia = "Deberás realizar una copia de seguridad de todos tus archivos importantes y crear un plan de respaldo para evitar futuras pérdidas de datos.";
         }
-        var respuesta = "Usted " + nombre + " de " + edad + " años y de la ciudad de " + ciudad + ", cometió el pecado de " + pecado + " por lo que su penitencia será: " + penitencia;
+        if (nombre !== "" || edad !== "" || ciudad !== "" || pecado !== ""){
+          var respuesta = "Usted " + nombre + " de " + edad + " años y de la ciudad de " + ciudad + ", cometió el pecado de " + pecado + " por lo que su penitencia será: " + penitencia;
         document.getElementById("respuesta").innerText = respuesta;
+        }
+        
       }
       </script>
 </head>
