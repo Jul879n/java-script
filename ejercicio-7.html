@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ejercicio 7</title>
+    <script>
+        function colorFondo(color) {
+            if (document.fgColor !== "" && diferente(document.fgColor, color)) {
+                document.bgColor = color;
+            } else if (document.fgColor === "" && color !== "#000") {
+                document.bgColor = color;
+            }
+        }
+        function colorTexto(color) {
+            if (document.bgColor !== "" && diferente(document.bgColor, color)) {
+                document.fgColor = color;
+            } else if (document.bgColor === "" && color !== "#fff") {
+                document.fgColor = color;
+            }
+        }
+        function diferente(colorFondo, colorTexto) {
+            return colorFondo !== colorTexto;
+        }
+    </script>
+</head>
+<body>
+    <div class="grupo">
+        <h1>Color de fondo</h1>
+        <input type="radio" name="fon" onclick="colorFondo('#fff');" />
+        Blanco <br>
+        <input type="radio" name="fon" onclick="colorFondo('#000');" />
+        Negro <br>
+        <input type="radio" name="fon" onclick="colorFondo('#f00');" />
+        Rojo <br>
+        <input type="radio" name="fon" onclick="colorFondo('#0f0');" />
+        Verde <br>
+        <input type="radio" name="fon" onclick="colorFondo('#00f');" />
+        Azul
+    </div>
+    <div class="grupo">
+        <h1>Color de texto</h1>
+        <input type="radio" name="texto" onclick="colorTexto('#fff');" />
+        Blanco <br>
+        <input type="radio" name="texto" onclick="colorTexto('#000');" />
+        Negro <br>
+        <input type="radio" name="texto" onclick="colorTexto('#f00');" />
+        Rojo <br>
+        <input type="radio" name="texto" onclick="colorTexto('#0f0');" />
+        Verde <br>
+        <input type="radio" name="texto" onclick="colorTexto('#00f');" />
+        Azul
+    </div>
+</body>
+</html>
