@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,32 +8,28 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script>
-      function pecado_digital(){
+      function pecado_digital() {
         var nombre = document.getElementById("nombre").value;
         var edad = document.getElementById("edad").value;
         var ciudad = document.getElementById("ciudad").value;
         var pecado = document.getElementById("pecado").value;
-        var penitencia;
-        if(pecado== 1){
-          pecado = "copy/paste sin leer";
-          penitencia="Deberás leer un libro completo y hacer un resumen del mismo.";
-        } else if(pecado == 2){
-          pecado = "hackear la cuenta del pololo/a";
+        var arreglo = ["copy/paste sin leer","hackear la cuenta del pololo/a","crackear software propietario","ataque DOS","Formatear sin respaldar"];
+        var penitencia = "No se ha definido una penitencia para este pecado.";
+        if (pecado == arreglo[0]) {
+          penitencia = "Deberás leer un libro completo y hacer un resumen del mismo.";
+        } else if (pecado == arreglo[1]) {
           penitencia = "Deberás escribir una carta de disculpa a la persona cuya cuenta hackeaste y ofrecerle tu ayuda para mejorar su seguridad en línea.";
-        } else if (pecado == 3){
-          pecado = "crackear software propietario";
-          penitencia= "Deberás donar al menos $10.000 a una organización benéfica que promueva la educación en programación y software libre.";
-        } else if(pecado == 4){
-          pecado = "ataque DOS";
-          penitencia= "Deberás pasar un día entero sin acceso a Internet y reflexionar sobre el impacto negativo que pueden tener tus acciones en línea.";
-        } else if(pecado ==5){
-          pecado = "Formatear sin respaldar";
+        } else if (pecado == arreglo[2]) {
+          penitencia = "Deberás donar al menos $10.000 a una organización benéfica que promueva la educación en programación y software libre.";
+        } else if (pecado == arreglo[3]) {
+          penitencia = "Deberás pasar un día entero sin acceso a Internet y reflexionar sobre el impacto negativo que pueden tener tus acciones en línea.";
+       } else if (pecado == arreglo[4]) {
           penitencia = "Deberás realizar una copia de seguridad de todos tus archivos importantes y crear un plan de respaldo para evitar futuras pérdidas de datos.";
         }
-        var respuesta = "Usted "+nombre+" de "+edad+" años y de la ciudad de "+ciudad+", cometio el pecado de "+pecado+" por lo que su penitencia será: "+penitencia;
+        var respuesta = "Usted " + nombre + " de " + edad + " años y de la ciudad de " + ciudad + ", cometió el pecado de " + pecado + " por lo que su penitencia será: " + penitencia;
         document.getElementById("respuesta").innerText = respuesta;
       }
-    </script>  
+      </script>
 </head>
 
 <body>
@@ -57,11 +54,11 @@
             <label for="pecado" class="form-label">Pecado Digital</label>
             <select class="form-select" id="pecado">
               <option selected></option>
-              <option value="1">copy/paste sin leer</option>
-              <option value="2">hackear la cuenta del pololo/a</option>
-              <option value="3">crackear software propietario</option>
-              <option value="4">ataque DOS</option>
-              <option value="5">Formatear sin respaldar</option>
+              <option value="copy/paste sin leer">copy/paste sin leer</option>
+              <option value="hackear la cuenta del pololo/a">hackear la cuenta del pololo/a</option>
+              <option value="crackear software propietario">crackear software propietario</option>
+              <option value="ataque DOS">ataque DOS</option>
+              <option value="Formatear sin respaldar">Formatear sin respaldar</option>
             </select>
           </div>
           <button class="btn btn-primary" type="button" onclick="pecado_digital()">Enviar</button>
