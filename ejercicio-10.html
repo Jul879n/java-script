@@ -14,36 +14,43 @@
         <div class="row">
             <div class="col-12 col-sm-6 mt-3">
                 <h1>Formulario de frase</h1>
+                <p><span id="elSujeto">Juan</span> <span id="elVerbo">se sentía</span> <span
+                        id="elAdjetivo">solo</span>, volvía a su <span id="elSustantivo">departamento</span>, y el
+                    silencio era el único que lo esperaba. <span id="elSujeto2">Juan</span> <span
+                        id="elVerbo2">estaba</span> <span id="elAdjetivo2">triste</span>, <span
+                        id="elSujeto3">Juan</span> <span id="elVerbo3">estaba</span> <span id="elAdjetivo3">solo</span>,
+                    muy <span id="elAdjetivo4">solo</span>. Y <span id="elSujeto4">Juan</span> tuvo una brillante idea:
+                    <span id="laIdea"></span></p>
                 <form id="penitencia-form">
                     <form>
                         <div class="mb-3">
                             <label for="sujeto">Sujeto:</label>
-                            <input type="text" class="form-control" id="sujeto" placeholder="Ingresa un sujeto">
+                            <input type="text" class="form-control" id="sujeto" name="sujeto"
+                                placeholder="Ingresa un sujeto">
                         </div>
                         <div class="mb-3">
                             <label for="verbo">Verbo:</label>
-                            <select class="form-select" id="verbo">
-                                <option selected></option>
-                                <option value="se sentía">se sentía</option>
-                                <option value="estaba">estaba</option>
-                            </select>
+                            <input type="text" class="form-control" id="verbo" name="verbo"
+                                placeholder="Ingresa un verbo">
                         </div>
                         <div class="mb-3">
                             <label for="adjetivo">Adjetivo calificativo:</label>
-                            <input type="text" class="form-control" id="adjetivo"
+                            <input type="text" class="form-control" id="adjetivo" name="adjetivo"
                                 placeholder="Ingresa un adjetivo calificativo">
                         </div>
                         <div class="mb-3">
                             <label for="sustantivo">Sustantivo:</label>
-                            <input type="text" class="form-control" id="sustantivo" placeholder="Ingresa un sustantivo">
+                            <input type="text" class="form-control" id="sustantivo" name="sustantivo"
+                                placeholder="Ingresa un sustantivo">
                         </div>
                         <div class="mb-3">
                             <label for="idea">Idea:</label>
-                            <input type="text" class="form-control" id="idea" placeholder="Ingresa una idea">
+                            <input type="text" class="form-control" id="idea" name="idea"
+                                placeholder="Ingresa una idea">
                         </div>
-                        <button type="button" class="btn btn-primary" id="generar">Generar oración</button>
                     </form>
                     <p class="mt-4" id="oracionGenerada"></p>
+
             </div>
         </div>
     </div>
@@ -52,20 +59,31 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
-        <script>
-            document.getElementById("generar")
-            .addEventListener("click", function() {
-                var sujeto = document.getElementById("sujeto").value;
-                var verbo = document.getElementById("verbo").value;
-                var adjetivo = document.getElementById("adjetivo").value;
-                var sustantivo= document.getElementById("sustantivo").value;
-                var idea= document.getElementById("idea").value;
-                if(sujeto !== "" && verbo !== "" && adjetivo !== "" && sustantivo !== "" && idea !== ""){
-                    var oracionGenerada = sujeto+" "+verbo+" solo, volvía a su departamento, y el silencio era el único que lo esperaba. "+sujeto+" "+verbo+" triste, "+sujeto+" "+verbo+" solo, muy solo. Y "+sujeto+" tuvo una brillante idea: "+idea+".";
-                document.getElementById("oracionGenerada").innerHTML = oracionGenerada;
-                }
-            });
-        </script>
+    <script>
+        document.getElementById("sujeto").addEventListener("keyup", function () {
+            document.getElementById("elSujeto").innerHTML = document.getElementById("sujeto").value;
+            document.getElementById("elSujeto2").innerHTML = document.getElementById("sujeto").value;
+            document.getElementById("elSujeto3").innerHTML = document.getElementById("sujeto").value;
+            document.getElementById("elSujeto4").innerHTML = document.getElementById("sujeto").value;
+        });
+        document.getElementById("verbo").addEventListener("keyup", function () {
+            document.getElementById("elVerbo").innerHTML = document.getElementById("verbo").value;
+            document.getElementById("elVerbo2").innerHTML = document.getElementById("verbo").value;
+            document.getElementById("elVerbo3").innerHTML = document.getElementById("verbo").value;
+        });
+        document.getElementById("adjetivo").addEventListener("keyup", function () {
+            document.getElementById("elAdjetivo").innerHTML = document.getElementById("adjetivo").value;
+            document.getElementById("elAdjetivo2").innerHTML = document.getElementById("adjetivo").value;
+            document.getElementById("elAdjetivo3").innerHTML = document.getElementById("adjetivo").value;
+            document.getElementById("elAdjetivo4").innerHTML = document.getElementById("adjetivo").value;
+        });
+        document.getElementById("sustantivo").addEventListener("keyup", function () {
+            document.getElementById("elSustantivo").innerHTML = document.getElementById("sustantivo").value;
+        });
+        document.getElementById("idea").addEventListener("keyup", function () {
+            document.getElementById("laIdea").innerHTML = document.getElementById("idea").value;
+        });
+    </script>
 </body>
 
 </html>
