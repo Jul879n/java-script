@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>número de la suerte del día</title>
+
+    <script>
+        function sumadora() {
+            uno= parseInt(prompt('¿Cuál es la suma de los números de su dirección?'));
+            dos= parseInt(prompt('¿Qué hora es?'));
+            tres= parseInt(prompt('¿Cuál es el último número de su número de teléfono?'));
+            cuatro= parseInt(prompt('¿Cuantos besos diste ayer?'));
+            color= (prompt('¿Cuál es el color favorito?'));
+            cinco=parseInt(prompt('¿Cuantas veces has hecho este curso?'));
+            seis=parseInt(prompt('¿Cuantos años llevas estudiando?'));
+            siete=parseInt(prompt('¿Cuantos años crees que te faltan?'));
+            numero=uno+dos-tres*cuatro/cinco+seis-siete;
+            alert('Sonría, su número de la suerte del día es '+ numero+' Parece que vas a tener un día ' + color);
+        }
+    </script>
+</head>
+<body onload="sumadora()">
+</body>
+
+</html>

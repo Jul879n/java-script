@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+    <script>
+        function feria() {
+            var frutas = ['Manzanas', 'Peras', 'Sandías', 'Platanos', 'Guanábana', 'Uvas'];
+            maximo = '';
+            longitud = 0;
+            frutas.forEach(function (item, index) {
+                 largo = item.length;
+                if (largo > longitud) {
+                    fruta = item;
+                    longitud = largo;
+                }
+                document.write(index + ') ' + item + '<br>');
+            });
+            document.write('El elemento más largo es: ' + fruta + ' con ' + longitud + ' caracteres');
+        }
+        function contar(){
+            var texto = prompt('Escriba un texto');
+            cadena = texto.split(' ');
+                cadena.forEach(function (item, index) {
+                 largo = item.length;
+                document.write(index + ') ' + item +' tiene '+item.length+' caracteres<br>');
+            });
+            if (cadena.length < 10) {
+                alert('Son muy pocas palabras, intente de nuevo');
+                contar();
+            } else if (texto.length > 10) {
+                    document.write('son mas de 10 palabras<br>');
+                feria();
+            }
+        }
+    </script>
+</head>
+<body onload="contar()">
+</body>
+</html>
